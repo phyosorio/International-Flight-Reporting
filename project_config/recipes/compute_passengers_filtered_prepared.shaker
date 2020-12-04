@@ -1,0 +1,172 @@
+{
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "maxStoredBytes": 104857600,
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL",
+      "timeout": -1
+    },
+    "autoRefreshSample": false
+  },
+  "explorationFilters": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateParser",
+      "params": {
+        "outCol": "date_parsed",
+        "formats": [
+          "MM/dd/yyyy"
+        ],
+        "columns": [
+          "data_dte"
+        ],
+        "timezone_id": "UTC",
+        "appliesTo": "SINGLE_COLUMN",
+        "lang": "auto"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FindReplace",
+      "params": {
+        "output": "month_name",
+        "mapping": [
+          {
+            "from": "1",
+            "to": "Jan"
+          },
+          {
+            "from": "2",
+            "to": "Feb"
+          },
+          {
+            "from": "3",
+            "to": "Mar"
+          },
+          {
+            "from": "4",
+            "to": "Apr"
+          },
+          {
+            "from": "5",
+            "to": "May"
+          },
+          {
+            "from": "6",
+            "to": "Jun"
+          },
+          {
+            "from": "7",
+            "to": "Jul"
+          },
+          {
+            "from": "8",
+            "to": "Aug"
+          },
+          {
+            "from": "9",
+            "to": "Sep"
+          },
+          {
+            "from": "10",
+            "to": "Oct"
+          },
+          {
+            "from": "11",
+            "to": "Nov"
+          },
+          {
+            "from": "12",
+            "to": "Dec"
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "Month"
+        ],
+        "appliesTo": "SINGLE_COLUMN",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsConcat",
+      "params": {
+        "outputColumn": "year_month",
+        "columns": [
+          "Year",
+          "Month",
+          "month_name"
+        ],
+        "join": "-"
+      },
+      "alwaysShowComment": false
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "previewMode": "ALL_ROWS",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "columnWidthsByName": {
+    "fg_apt_id": 100,
+    "usg_apt": 100,
+    "fg_apt": 100,
+    "month_name": 100,
+    "year_month": 120,
+    "carriergroup": 105,
+    "data_dte": 106,
+    "type": 100,
+    "usg_wac": 100,
+    "Charter": 100,
+    "airlineid": 100,
+    "Scheduled": 100,
+    "Month": 100,
+    "carrier": 100,
+    "Year": 100,
+    "usg_apt_id": 100,
+    "Total": 100,
+    "fg_wac": 100,
+    "date_parsed": 183
+  },
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
+  }
+}

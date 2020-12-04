@@ -1,0 +1,86 @@
+{
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "maxStoredBytes": 104857600,
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL",
+      "timeout": -1
+    },
+    "autoRefreshSample": false
+  },
+  "explorationFilters": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnRenamer",
+      "params": {
+        "renamings": [
+          {
+            "from": "Total_IN_mktshare_lag12",
+            "to": "Total_IN_mktshare_2016"
+          },
+          {
+            "from": "Total_US_mktshare_lag12",
+            "to": "Total_US_mktshare_2016"
+          }
+        ]
+      },
+      "alwaysShowComment": false
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "previewMode": "ALL_ROWS",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "columnWidthsByName": {
+    "Charter_IN_mktshare": 183,
+    "Scheduled_IN_mktshare": 197,
+    "Scheduled_US_mktshare": 197,
+    "Charter_US_mktshare": 183,
+    "Total_IN_mktshare_lag12": 211,
+    "Scheduled_total": 128,
+    "Total_lag12": 100,
+    "Total_US_mktshare_lag12": 211,
+    "Month": 100,
+    "Year": 100,
+    "Charter_total": 113,
+    "Total_US_mktshare": 169,
+    "Total_US_mktshare_2016": 204,
+    "Total": 100,
+    "Total_IN_mktshare": 169,
+    "Total_IN_mktshare_2016": 204
+  },
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
+  }
+}
